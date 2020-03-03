@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
-import PortfolioStyled from "./PortfolioStyled.style";
-import FrenchPortfolio from "../components/Portfolios/FrenchPortfolio";
-import EnglishPortfolio from "../components/Portfolios/EnglishPortfolio";
+import ProjectStyled from "../components/Projects/ProjectStyled.style";
+import Chips from "../components/Chips/Chips";
+//import PortfolioStyled from "../components/Header/HeaderStyled.style";
+// import FrenchPortfolio from "../components/Portfolios/FrenchPortfolio";
+// import EnglishPortfolio from "../components/Portfolios/EnglishPortfolio";
 
-function Portfolio() {
+function Portfolio(props) {
   const [data, setData] = useState({
-    data: [],
-    chooseLanguage: false
+    data: []
   });
 
   useEffect(() => {
@@ -18,50 +19,41 @@ function Portfolio() {
       .catch(error => console.log(error))
   }, [])
 
-  function changeLanguage(e) {
-    console.log(e.target.className);
-    const newState = { ...data };
-
-    if (e.target.className === "languages--english") {
-      newState.chooseLanguage = true;
-    } else {
-      newState.chooseLanguage = false;
-    }
-
-    setData(newState);
-  }
-
   if (data.data.length === 0) return "loading";
   return (
     <React.Fragment>
-      <PortfolioStyled>Hello it's me, Kévin</PortfolioStyled>
-        <nav onClick={(e) => changeLanguage(e)}>
-          <div className="languages">
-            <div className="languages--french">
-            <img class="flag" src="https://lipis.github.io/flag-icon-css/flags/4x3/fr.svg" alt="France Flag" style={{width: "24px", paddingRight: "10px"}}></img>
-              French
-            </div>
-            <div className="languages--english">
-              <img class="flag" src="https://lipis.github.io/flag-icon-css/flags/4x3/gb.svg" alt="United Kingdom Flag" style={{width: "24px", paddingRight: "10px"}}></img>
-              English
-            </div>
-          </div>
-        </nav>
-      {
-    function () {
-      if (data.chooseLanguage === true) {
-        return (
-          <EnglishPortfolio data={data.data} />
-        )
-      } else {
-        return (
-          <FrenchPortfolio data={data.data} />
-        )
-      }
-    } ()
-  }
 
-    </React.Fragment >
+    {
+      <p>  {props.language.about}   </p>
+    }
+
+  <ProjectStyled>
+      <h4>Repos</h4>
+      <ul>
+        {
+          data.data.map((project, index) => {
+            return (
+              <div key={index}>
+                <li key={index}>
+                  <a href={project.html_url} target="_blank" rel="noopener noreferrer">{project.name}</a>
+                </li>
+                <Chips content={project.language} />
+              </div>
+            )
+          })
+        }
+      </ul>
+    </ProjectStyled>
+
+    {
+      <div className="contact">
+        {
+          <p>{props.language.contactLinkedin} <a href="https://www.linkedin.com/in/k%C3%A9vin-joya-5b6250133/" target="_blank" rel="noopener noreferrer">Linkedin</a> {props.language.contactGithub} <a href="https://github.com/Kvin3324" target="_blank">Github</a></p>
+        }
+      </div>
+    }
+
+    </React.Fragment>
   )
 }
 
