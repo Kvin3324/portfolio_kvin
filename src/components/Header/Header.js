@@ -1,5 +1,5 @@
 import React from "react";
-import HeaderStyled from "./HeaderStyled.style";
+import HeaderStyled from "../../style/HeaderStyled.style";
 import Languages from "../../utils/languages.json";
 
 function Header(props) {
@@ -15,7 +15,7 @@ function Header(props) {
 
   return(
     <HeaderStyled as="header">
-      <h1>Hello it's me, Kévin</h1>
+      <h1>Hello it's me, Kévin <span role="img" aria-label="hello--emoji">👋</span></h1>
         <select onChange={changeLanguage}>
           {
             data.languages.map((language, index) => <option key={index}>{language}</option>)
