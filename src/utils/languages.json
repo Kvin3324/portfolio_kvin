@@ -1,11 +1,13 @@
 {
   "fr": {
-    "about": "Bienvenue sur mon portfolio, je m'appelle Kévin et je suis développeur front-end Javascript. ⚛️  Je suis actif sur Github où vous pouvez retrouver tout ce que j'ai pu faire jusqu'à aujourd'hui, ça peut valoir le coup.😉",
+    "about": "Bienvenue sur mon portfolio, je m'appelle Kévin et je suis développeur front-end Javascript. ⚛️",
+    "aboutTwo": "Je suis actif sur Github où vous pouvez retrouver tout ce que j'ai pu faire jusqu'à aujourd'hui, ça vaut le coup d'oeil.😉",
     "contactLinkedin": " N'hésitez pas à prendre contact avec moi en consultant mon",
     "contactGithub": "et pour voir mes projets sur"
   },
   "en": {
-    "about": " Welcome on my website ! I'm Kévin and i'm a Front-end developper working with Javascript. ⚛️ I'm on Github where im' developping some projects but take a look, it's awesome. 😉",
+    "about": " Welcome on my website ! I'm Kévin and i'm a Front-end developper working with Javascript. ⚛️",
+    "aboutTwo": "I'm on Github where im' developping some projects but take a look, it's awesome. 😉",
     "contactLinkedin": "To stay in touch, you can send me a message on my",
     "contactGithub": "and to see my work on my"
   }
