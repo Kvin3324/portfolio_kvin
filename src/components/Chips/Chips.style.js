@@ -4,10 +4,10 @@ const ChipsWrapper = styled.span`
   border-radius: 2px;
   font-size: 0.8em;
   font-weight: 400;
-  padding: 2px 4px;
+  padding: 6px 8px;
   margin-left: 10px;
-  margin-top: 14px;
-  height: 16px;
+  margin-top: 10px;
+  height: 10px;
   ${props => {
     switch (props.contentType) {
       case "HTML":
