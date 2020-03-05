@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const ProjectStyled = styled.section`
   text-align: left;
-  line-height: 5px;
+  line-height: 1px;
     div {
       display: flex;
     }

@@ -7,7 +7,7 @@ const ChipsWrapper = styled.span`
   padding: 6px 8px;
   margin-left: 10px;
   margin-top: 10px;
-  height: 10px;
+  height: 4px;
   ${props => {
     switch (props.contentType) {
       case "HTML":

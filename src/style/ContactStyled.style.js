@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const ContactStyled = styled.div`
+const ContactStyled = styled.footer`
 margin-top: 40px;
 text-align: left;
   p {
