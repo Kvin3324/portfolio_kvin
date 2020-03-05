@@ -3,9 +3,7 @@ import ProjectStyled from "../style/ProjectStyled.style";
 import Chips from "../components/Chips/Chips";
 import AboutStyled from "../style/AboutStyled.style";
 import ContactStyled from "../style/ContactStyled.style";
-//import PortfolioStyled from "../components/Header/HeaderStyled.style";
-// import FrenchPortfolio from "../components/Portfolios/FrenchPortfolio";
-// import EnglishPortfolio from "../components/Portfolios/EnglishPortfolio";
+import Loader from "../components/Loader/Loader";
 
 function Portfolio(props) {
   const [data, setData] = useState({
@@ -13,7 +11,13 @@ function Portfolio(props) {
   });
 
   useEffect(() => {
-    fetch("https://api.github.com/users/kvin3324/repos?sort=pushed&per_page=10")
+    fetch("https://api.github.com/user/repos?sort=pushed&per_page=10", {
+      method: "get",
+      headers: {
+              "Authorization": `token ${process.env.REACT_APP_APIKEY}`,
+              "User-Agent": "Kvin3324",
+      }
+    })
       .then(response => response.json())
       .then(dataParsed => setData({
         data: dataParsed
@@ -21,7 +25,7 @@ function Portfolio(props) {
       .catch(error => console.log(error))
   }, [])
 
-  if (data.data.length === 0) return "loading";
+  if (data.data.length === 0) return <Loader />;
   return (
     <React.Fragment>
       <AboutStyled className="about">
@@ -46,7 +50,7 @@ function Portfolio(props) {
         </ul>
       </ProjectStyled>
       <ContactStyled className="contact">
-        <p>{props.language.contactLinkedin} <a href="https://www.linkedin.com/in/k%C3%A9vin-joya-5b6250133/" target="_blank" rel="noopener noreferrer">Linkedin</a> {props.language.contactGithub} <a href="https://github.com/Kvin3324" target="_blank">Github</a>.<span role="img" aria-label="contact--emoji">📱</span></p>
+        <p>{props.language.contactLinkedin} <a href="https://www.linkedin.com/in/k%C3%A9vin-joya-5b6250133/" target="_blank" rel="noopener noreferrer">Linkedin</a> {props.language.contactGithub} <a href="https://github.com/Kvin3324" target="_blank" rel="noopener noreferrer">Github</a>.<span role="img" aria-label="contact--emoji">📱</span></p>
       </ContactStyled>
     </React.Fragment>
   )
