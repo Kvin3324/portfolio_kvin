@@ -1,5 +1,5 @@
 import React from "react";
-import ChipsWrapper from "./Chips.style";
+import ChipsWrapper from "../../style/Chips.style";
 
 const Chips = props => {
 	return (
