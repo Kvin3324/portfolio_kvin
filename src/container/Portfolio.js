@@ -14,8 +14,8 @@ function Portfolio(props) {
     fetch("https://api.github.com/user/repos?sort=pushed&per_page=10", {
       method: "get",
       headers: {
-              "Authorization": `token ${process.env.REACT_APP_APIKEY}`,
-              "User-Agent": "Kvin3324",
+        "Authorization": `token ${process.env.REACT_APP_APIKEY}`,
+        "User-Agent": "Kvin3324",
       }
     })
       .then(response => response.json())
@@ -28,27 +28,29 @@ function Portfolio(props) {
   if (data.data.length === 0) return <Loader />;
   return (
     <React.Fragment>
-      <AboutStyled className="about">
-        <p>{props.language.about}</p>
-        <p>{props.language.aboutTwo}</p>
-      </AboutStyled>
-      <ProjectStyled>
-        <h4>Repos</h4>
-        <ul>
-          {
-            data.data.map((project, index) => {
-              return (
-                <div key={index}>
-                  <li key={index}>
-                    <a href={project.html_url} target="_blank" rel="noopener noreferrer">{project.name}</a>
-                  </li>
-                  <Chips content={project.language} />
-                </div>
-              )
-            })
-          }
-        </ul>
-      </ProjectStyled>
+      <main>
+        <AboutStyled className="about">
+          <p className="about--one">{props.language.about}</p>
+          <p>{props.language.aboutTwo}</p>
+        </AboutStyled>
+        <ProjectStyled>
+          <h4>Repos</h4>
+          <ul>
+            {
+              data.data.map((project, index) => {
+                return (
+                  <div key={index}>
+                    <li key={index}>
+                      <a href={project.html_url} target="_blank" rel="noopener noreferrer">{project.name}</a>
+                    </li>
+                    <Chips content={project.language} />
+                  </div>
+                )
+              })
+            }
+          </ul>
+        </ProjectStyled>
+      </main>
       <ContactStyled className="contact">
         <p>{props.language.contactLinkedin} <a href="https://www.linkedin.com/in/k%C3%A9vin-joya-5b6250133/" target="_blank" rel="noopener noreferrer">Linkedin</a> {props.language.contactGithub} <a href="https://github.com/Kvin3324" target="_blank" rel="noopener noreferrer">Github</a>.<span role="img" aria-label="contact--emoji">📱</span></p>
       </ContactStyled>
