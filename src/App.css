@@ -5,3 +5,86 @@ body {
   margin: 0 auto;
   padding: 0 20px;
 }
+
+/*********** RESPONSIVE  ***********/
+/*********** TABLET ***********/
+@media (min-width: 768px) and (max-width: 1024px) {
+  h1 {
+    font-size: 2em!important;
+  }
+
+  select {
+    margin-top: 3%!important;
+  }
+
+  .about p {
+    line-height: normal!important;
+    font-size: 1.5em!important;
+  }
+}
+
+/*********** IPHONE X ***********/
+@media screen and (min-width: 375px) and (max-width: 812px) {
+  header {
+    display: inline!important;
+  }
+
+  h1 {
+    font-size: 2.1em!important;
+  }
+
+  select {
+    width: 10%!important;
+    margin-left: 1px!important;
+    margin-top: 0!important;
+  }
+
+  .about p {
+    line-height: normal!important;
+    font-size: 0.9em!important;
+  }
+}
+
+/*********** GALAXY ***********/
+@media screen and (min-width: 360px) and (max-width: 640px) {
+  header {
+    display: inline!important;
+  }
+
+  h1 {
+    font-size: 2em!important;
+  }
+
+  select {
+    width: 10%!important;
+    margin-left: 1px!important;
+    margin-top: 0!important;
+  }
+
+  .about p {
+    line-height: normal!important;
+    font-size: 0.8em;
+  }
+}
+
+/*********** IPHONE SE/S ***********/
+@media screen and (min-width: 320px) and (max-width: 560px) {
+  header {
+    display: inline!important;
+  }
+
+  h1 {
+    font-size: 1.8em!important;
+  }
+
+  select {
+    width: 10%!important;
+    margin-left: 1px!important;
+    margin-top: 0!important;
+  }
+
+  .about p {
+    line-height: normal!important;
+    font-size: 0.7em;
+  }
+}
