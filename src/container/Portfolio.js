@@ -14,7 +14,7 @@ function Portfolio(props) {
     fetch("https://api.github.com/user/repos?sort=pushed&per_page=10", {
       method: "get",
       headers: {
-              "Authorization": `token ${process.env.VARIABLE_NAME}`,
+              "Authorization": `token ${process.env.REACT_APP_APIKEY}`,
               "User-Agent": "Kvin3324",
       }
     })
