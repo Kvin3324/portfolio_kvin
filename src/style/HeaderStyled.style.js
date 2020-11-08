@@ -6,35 +6,27 @@ const HeaderStyled = styled(Container)`
   margin: 0;
   padding: 0;
   select {
+    background: none;
     border: none;
+    border-bottom: 1px solid #3a3a3a;
     height: 30px;
-    width: 4%;
     margin-top: 5%;
     margin-left: 52%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-overflow: "";
   }
   h1 {
-    font-family: 'Roboto';
+    font-family: "Roboto";
     font-size: 2.5em;
   }
 
-  @media (min-width: 768px) and (max-width: 1024px) {
-    h1 {
-      font-size: 3em!important;
-    }
+  @media screen and (min-width: 300px) {
+    flex-direction: column;
+    align-items: center;
     select {
-      margin-top: 6%!important;
-      margin-left: 20%!important;
-    }
-  }
-
-  @media screen and (min-width: 375px) and (max-width: 812px) {
-    h1 {
-      font-size: 2.1em;
-    }
-    select {
-      width: 10%;
-      margin-left: 1px;
-      margin-top: 0;
+      margin-left: 0;
+      width: 5%;
     }
   }
 
@@ -44,11 +36,33 @@ const HeaderStyled = styled(Container)`
       font-size: 1.8em;
     }
     select {
-      width: 10%;
       margin-left: 1px;
       margin-top: 0;
     }
   }
-`
 
-export default HeaderStyled
+  @media screen and (min-width: 480px) {
+    select {
+      width: 4%;
+    }
+  }
+
+  @media (min-width: 768px) {
+    flex-direction: initial;
+    h1 {
+      font-size: 3em;
+    }
+    select {
+      margin-left: 20%;
+      width: 3%;
+    }
+  }
+
+  @media screen and (min-width: 1026px) {
+    select {
+      width: 2%;
+    }
+  }
+`;
+
+export default HeaderStyled;

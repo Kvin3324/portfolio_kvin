@@ -7,21 +7,25 @@ font-size: 1.4em;
   p {
     font-family: 'Nunito';
   }
-  .about--one {
-    line-height: 4px;
+  .about--content {
+    display: flex;
+    .about--one {
+      margin-top: 12px;
+    }
+  }
+
+  @media screen and (min-width: 320px) {
+    p {
+      line-height: normal;
+      font-size: 0.7em;
+    }
   }
 
   @media screen and (min-width: 375px) and (max-width: 812px) {
     p {
-      line-height: normal!important;
-      font-size: 0.9em!important;
+      font-size: 0.9em;
     }
   }
-  @media screen and (min-width: 320px) and (max-width: 560px) {
-    p {
-      line-height: normal!important;
-      font-size: 0.7em;
-    }
 `
 
 export default AboutStyled
