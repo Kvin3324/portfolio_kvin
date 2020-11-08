@@ -6,8 +6,9 @@
     "contactGithub": "et pour voir mes projets sur"
   },
   "en": {
-    "about": " Welcome on my website ! I'm Kévin and i'm a Front-end developper working with Javascript. ⚛️",
-    "aboutTwo": "I'm on Github where im' developping some projects but take a look, it's awesome. 😉",
+    "about": " Welcome on my website ! I'm Kévin and i'm a Front-end developer working with Javascript. ",
+    "iconAbout": "⚛️",
+    "aboutTwo": "I'm on Github where i'm developing some projects but take a look, it's awesome. 😉",
     "contactLinkedin": "To stay in touch, you can send me a message on my",
     "contactGithub": "and to see my work on my"
   }
