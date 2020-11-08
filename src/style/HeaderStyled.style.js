@@ -10,7 +10,6 @@ const HeaderStyled = styled(Container)`
     border: none;
     border-bottom: 1px solid #3a3a3a;
     height: 30px;
-    margin-top: 5%;
     margin-left: 52%;
     -webkit-appearance: none;
     -moz-appearance: none;
