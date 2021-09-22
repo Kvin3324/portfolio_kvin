@@ -14,7 +14,7 @@ function Portfolio(props) {
     fetch("https://api.github.com/user/repos?sort=pushed&per_page=10", {
       method: "get",
       headers: {
-        Authorization: `token ${process.env.REACT_APP_APIKEY}`,
+        Authorization: `token ${process.env.REACT_APP_API_KEY}`,
         "User-Agent": "Kvin3324",
       },
     })
@@ -27,7 +27,8 @@ function Portfolio(props) {
       .catch((error) => console.log(error));
   }, []);
 
-  if (data.data.length === 0) return <Loader />;
+  if (data.data.length === 0) return 'Loading...';
+
   return (
     <React.Fragment>
       <main>
